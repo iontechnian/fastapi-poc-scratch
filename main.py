@@ -24,7 +24,7 @@ origins = [
 app.include_router(auth_router)
 app.include_router(outlook_router)
 app.include_router(sheet_router)
-app.mount('/', ASGIApp(sio))
+app.mount('/socket.io', ASGIApp(sio, socketio_path=''))
 
 @app.get("/")
 async def root():

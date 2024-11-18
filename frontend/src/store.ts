@@ -27,7 +27,7 @@ interface Store {
   updateFocus: (focus: boolean) => void;
 }
 
-const socket = io('https://xtpvjds2-8000.brs.devtunnels.ms/ws', { transports: ['websocket', 'polling', 'webtransport'] });
+const socket = io('http://localhost:8000', { transports: ['websocket', 'polling', 'webtransport'] });
 
 export const useStore = create<Store>((set, get) => ({
   connected: false,
